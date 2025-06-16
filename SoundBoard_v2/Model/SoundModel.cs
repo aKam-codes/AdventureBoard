@@ -46,7 +46,7 @@ namespace SoundBoard_v2.Model
 
                 // Restart Audio when it has completed
                 outputDevice.PlaybackStopped += (object o, StoppedEventArgs a) => {
-                    Console.WriteLine(name + " was stopped");
+                    Console.WriteLine($"'{name}' was stopped");
                     audioFile.Position = 0;
                     isPlaying = false;
                 };
@@ -70,17 +70,20 @@ namespace SoundBoard_v2.Model
             isPlaying = true;
         }
 
-        public Boolean getFileExists()
+        public bool getFileExists()
         {
             return fileExists;
         }
 
         public void cleanUp()
         {
-            outputDevice.Dispose();
-            outputDevice = null;
-            audioFile.Dispose();
-            audioFile = null;
+            if (outputDevice != null) 
+                outputDevice.Dispose();
+                outputDevice = null;
+
+            if(audioFile != null)
+                audioFile.Dispose();
+                audioFile = null;
         }
     }
 }

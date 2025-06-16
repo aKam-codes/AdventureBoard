@@ -31,10 +31,6 @@ namespace SoundBoard_v2
 
         private void InitializeSound()
         {
-            //player = new SoundPlayer();
-            //player.SoundLocation = "C:/Users/am_ka/Desktop/Messy Work Bench/Practice/sounds/sword-35999.wav";
-            //player.LoadAsync();
-
             this.Closed += new EventHandler(AppExit_Event);
         }
 
@@ -44,17 +40,15 @@ namespace SoundBoard_v2
             Debug.WriteLine("\n - Sound Btn Clicked -");
 
             // TODO figure out what happened with event handler
-            //SBViewModel.getSoundModel(0).PlaySound_Command.FireCanExecuteChanged();
-            SBViewModel.getSoundModel(0).playSound();
+            SBViewModel.getSoundModel(0).PlaySound_Command.FireCanExecuteChanged();
+            //SBViewModel.getSoundModel(0).playSound();
 
         }
 
         private void AppExit_Event(object sender, EventArgs e)
         {
             Debug.WriteLine("\n - Exit Cleanup Hit -");
-            SBViewModel.getSoundModel(0).cleanUp();
-
-
+            SBViewModel.cleanUpFiles();
         }
 
         

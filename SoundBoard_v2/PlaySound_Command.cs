@@ -32,10 +32,11 @@ namespace SoundBoard_v2
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
-
-        public void Execute(object parameter)
+        
+        public async void Execute(object parameter)
         {
-            sm.playSound();
+            if (sm.getFileExists())
+                sm.playSound();
         }
     }
 }

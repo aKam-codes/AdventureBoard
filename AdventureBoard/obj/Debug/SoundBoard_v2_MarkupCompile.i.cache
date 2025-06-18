@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\am_ka\Desktop\WorkBench\AdventureBoard\SoundBoard_v2\obj\Debug\
+C:\Users\am_ka\Desktop\WorkBench\AdventureBoard\AdventureBoard\obj\Debug\
 SoundBoard_v2
 none
 false
 DEBUG;TRACE
-C:\Users\am_ka\Desktop\WorkBench\AdventureBoard\SoundBoard_v2\App.xaml
-11151548125
+C:\Users\am_ka\Desktop\WorkBench\AdventureBoard\AdventureBoard\App.xaml
+31454495893
 
-9-1382905623
+10-2049323431
 241936330949
-MainWindow.xaml;
+MainWindow.xaml;Themes\Generic.xaml;Views\SoundButton.xaml;
 
 True
 

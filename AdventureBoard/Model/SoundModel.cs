@@ -7,25 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoundBoard_v2.Model
+namespace AdventureBoard.Model
 {
-    public class SoundModel : INotifyPropertyChanged
+    public class SoundModel 
     {   
         // Sound File details
         private string name { get; set; }
         private string filePath { get; set; }
 
+
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
 
-        private Boolean fileExists = false;
+        private bool fileExists = false;
 
-        private Boolean isPlaying = false;
+        private bool isPlaying = false;
 
-        public PlaySound_Command PlaySound_Command { get; }
+       // public PlaySound_Command PlaySound_Command { get; }
 
         // Events
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
 
         // Constructor 
@@ -35,7 +36,7 @@ namespace SoundBoard_v2.Model
             this.filePath = fp;
 
             fileExists = File.Exists(filePath);
-            PlaySound_Command = new PlaySound_Command(this);
+            //PlaySound_Command = new PlaySound_Command(this);
         }
 
         public void playSound()

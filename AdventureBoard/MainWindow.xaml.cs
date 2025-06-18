@@ -1,4 +1,4 @@
-﻿using SoundBoard_v2.Model;
+﻿using AdventureBoard.Model;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Media;
@@ -8,7 +8,7 @@ using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System;
 
-namespace SoundBoard_v2
+namespace AdventureBoard
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -16,6 +16,7 @@ namespace SoundBoard_v2
     public partial class MainWindow : Window
     {
         public ViewModel.ViewModel SBViewModel { get; set; }
+
 
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
@@ -38,10 +39,6 @@ namespace SoundBoard_v2
         {
             //SBViewModel.PlaySound_Command.FireCanExecuteChanged();
             Debug.WriteLine("\n - Sound Btn Clicked -");
-
-            // TODO figure out what happened with event handler
-            SBViewModel.getSoundModel(0).PlaySound_Command.FireCanExecuteChanged();
-            //SBViewModel.getSoundModel(0).playSound();
 
         }
 

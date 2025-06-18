@@ -1,4 +1,4 @@
-﻿using SoundBoard_v2.Model;
+﻿using AdventureBoard.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoundBoard_v2.ViewModel
+namespace AdventureBoard.ViewModel
 {
     public class ViewModel : INotifyPropertyChanged
     {
         // Events
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public PlaySound_Command PlaySound_Command { get; }
 
         // Sound Model Collection
         private List<SoundModel> soundModels = new List<SoundModel>();
@@ -19,6 +21,7 @@ namespace SoundBoard_v2.ViewModel
         public ViewModel()
         {
             initFiles();
+            PlaySound_Command = new PlaySound_Command(this);
         }
 
         public void initFiles()
@@ -40,6 +43,19 @@ namespace SoundBoard_v2.ViewModel
             return soundModels.ElementAt(index);
         }
 
+        public void playSound()
+        {
+            getSoundModel(0).playSound();
+        }
+
+        public bool getFileExists()
+        {
+            return getSoundModel(0).getFileExists();
+        }
+
+        /// <summary>
+        /// Method to dispose of all SoundModel files and outputs
+        /// </summary>
         public void cleanUpFiles()
         {
             foreach(SoundModel sm in soundModels)

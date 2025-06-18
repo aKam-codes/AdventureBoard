@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SoundBoard_v2
+namespace AdventureBoard
 {
     /// <summary>
     /// Interaction logic for App.xaml

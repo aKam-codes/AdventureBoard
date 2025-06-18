@@ -1,4 +1,4 @@
-﻿using SoundBoard_v2.Model;
+﻿using AdventureBoard.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,23 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SoundBoard_v2
+namespace AdventureBoard
 {
     public class PlaySound_Command : ICommand
     {
         // Command class member variables
         public event EventHandler CanExecuteChanged;
-        private Model.SoundModel sm;
+        private ViewModel.ViewModel vm;
 
         // Constructor
-        public PlaySound_Command(SoundModel sM)
+        public PlaySound_Command(ViewModel.ViewModel vM)
         {
-            this.sm = sM;
+            this.vm = vM;
         }
 
         public bool CanExecute(object parameter)
         {
-            return sm.getFileExists();
+            return true;
         }
 
         /// <summary>
@@ -33,10 +33,11 @@ namespace SoundBoard_v2
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
         
-        public async void Execute(object parameter)
+        public void Execute(object parameter)
         {
-            if (sm.getFileExists())
-                sm.playSound();
+            Console.WriteLine("WOMBO");
+            if (vm.getFileExists())
+                vm.playSound();
         }
     }
 }
